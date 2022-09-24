@@ -84,12 +84,12 @@ class Portfolio(object):
         #        (B)        #
         #####################
         w = cvx.Variable(n)
-        gamma = cvx.Parameter(sign='positive')
+        gamma = cvx.Parameter(nonneg=True)
         exp_ret = mu.T * w
         risk = cvx.quad_form(w, cov)
 
         prob = cvx.Problem(cvx.Maximize(exp_ret - gamma * risk),
-                           [cvx.sum_entries(w) == 1,
+                           [cvx.sum(w) == 1,
                             w >= 0])
 
         SAMPLES = samples
@@ -102,7 +102,9 @@ class Portfolio(object):
             gamma.value = gamma_vals[i]
             prob.solve()
             risk_data[i] = cvx.sqrt(risk).value
-            ws.append(np.array(w.value).T.tolist()[0])
+            w_i = np.array(w.value)
+            w_i[w_i < 1e-6] = 0
+            ws.append(w_i.T.tolist())
             ret_data[i] = exp_ret.value
 
         w_minVar = cvx.Variable(n)
@@ -110,7 +112,7 @@ class Portfolio(object):
 
         risk_minVar = cvx.quad_form(w_minVar, cov)
         prob_minVar = cvx.Problem(cvx.Minimize(risk_minVar),
-                            [cvx.sum_entries(w_minVar) == 1,
+                            [cvx.sum(w_minVar) == 1,
                              w_minVar >= 0])
         prob_minVar.solve()
         risk_data_minVar = cvx.sqrt(risk_minVar).value
@@ -183,7 +185,7 @@ class Portfolio(object):
         :return: matplotlib matplotlib.figure.Figure object
         '''
 
-        fig = plt.figure(figsize=(12, 6))
+        fig = plt.figure(figsize=(6, 6))
         ax = fig.add_subplot(111)
         plt.pie(self.weights, labels=self.tickers, explode=[0.01]*len(self.weights), autopct='%1.1f%%')
 

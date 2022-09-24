@@ -1,7 +1,13 @@
 import pymongo
 
+
+# @staticmethod Declares a static method in the class.
+# It cannot have cls or self parameter.
+# The static method cannot access the class attributes or the instance attributes.
+# The static method can be called using ClassName.MethodName() and also using object.MethodName().
+# It can return an object of the class.
 class Database(object):
-    URI = "mongodb://127.0.0.1:27017"
+    URI = "mongodb+srv://islipd:bZhisoWoiHWM9cWP@msf2022.5fehrg1.mongodb.net/test"
     DATABASE = None
 
     @staticmethod
@@ -11,7 +17,7 @@ class Database(object):
 
     @staticmethod
     def insert(collection, data):       # Inserts new record in db.collection (data must be in JSON)
-        Database.DATABASE[collection].insert(data)
+        Database.DATABASE[collection].insert_one(data)
 
     @staticmethod
     def find(collection, query):        # Returns all records from db.collection matching query
