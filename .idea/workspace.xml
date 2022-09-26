@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c38bb7-7de7-4c21-9a32-0f774d9b8123" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/basicMVO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/basicMVO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/portfolios/portfolio.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/portfolios/portfolio.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/html_dependencies.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/html_dependencies.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
     <envs>
@@ -40,6 +42,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -56,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663874439332</updated>
       <workItem from="1663903141949" duration="4494000" />
-      <workItem from="1663989214788" duration="7444000" />
+      <workItem from="1663989214788" duration="20841000" />
     </task>
     <servers />
   </component>
