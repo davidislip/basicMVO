@@ -84,12 +84,12 @@ class Portfolio(object):
         #        (B)        #
         #####################
         w = cvx.Variable(n)
-        gamma = cvx.Parameter(sign='positive')
+        gamma = cvx.Parameter(nonneg=True)
         exp_ret = mu.T * w
         risk = cvx.quad_form(w, cov)
 
         prob = cvx.Problem(cvx.Maximize(exp_ret - gamma * risk),
-                           [cvx.sum_entries(w) == 1,
+                           [cvx.sum(w) == 1,
                             w >= 0])
 
         SAMPLES = samples
@@ -110,7 +110,7 @@ class Portfolio(object):
 
         risk_minVar = cvx.quad_form(w_minVar, cov)
         prob_minVar = cvx.Problem(cvx.Minimize(risk_minVar),
-                            [cvx.sum_entries(w_minVar) == 1,
+                            [cvx.sum(w_minVar) == 1,
                              w_minVar >= 0])
         prob_minVar.solve()
         risk_data_minVar = cvx.sqrt(risk_minVar).value
